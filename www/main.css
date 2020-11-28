@@ -1,0 +1,31 @@
+ul {
+  background-color: #f2f2f2;
+  color: blue;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  text-align: left;
+}
+
+ul li a {
+  color: #66CCFF;
+  display: block;
+  font-size: 1.6rem;
+  padding: 1.5rem 1.6rem;
+  text-decoration: none;
+  transition: all, 0.1s;
+  text-align: left;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: blue;
+  text-decoration: none;
+  text-align: left;
+}
+
+ul li a:hover {
+  background-color: #e6e6e6;
+  color: blue;
+  text-align: left;
+}
+
