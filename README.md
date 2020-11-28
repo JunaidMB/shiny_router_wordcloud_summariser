@@ -1,6 +1,6 @@
 # Making a Website with shiny.router
 
-This repository builds a website using the [`shiny.router`](https://cran.r-project.org/web/packages/shiny.router/index.html) package. The website brings together 2 shiny apps named `sentiment_wordcloud_app.R` and `text_summary.R` into a single shiny app described in `app.R`. 
+I build a website using the [`shiny.router`](https://cran.r-project.org/web/packages/shiny.router/index.html) package. The website brings together 2 shiny apps named `sentiment_wordcloud_app.R` and `text_summary.R` into a single shiny app described in `app.R`. 
 
 The `sentiment_wordcloud_app.R` app allows the generation of positive and negative sentiment wordclouds. Given a piece of text, a wordcloud will be generated from the positive sentiment composite words and from the negative sentiment composite words. Read more about the approach taken [here](https://www.tidytextmining.com/sentiment.html#wordclouds).
 
