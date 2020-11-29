@@ -62,7 +62,8 @@ wordcloud_page <- div(
     
     fluidRow(
       column(10,
-             textAreaInput(inputId = "input_text_wc", label = "Input Text - Format them as sentences", width = "1000px", height = "250px")     
+             textAreaInput(inputId = "input_text_wc", label = "Input Text - Format them as sentences", width = "1000px", height = "250px",
+                           value = "I had called upon my friend, Mr. Sherlock Holmes, one day in the autumn of last year and found him in deep conversation with a very stout, florid-faced, elderly gentleman with fiery red hair. With an apology for my intrusion, I was about to withdraw when Holmes pulled me abruptly into the room and closed the door behind me.")     
       )
     ),
     
@@ -111,9 +112,18 @@ text_summary_page <- div(
   
   fluidRow(
     column(10,
-           textAreaInput(inputId = "input_text_summary", label = "Input Text - Format them as sentences", width = "1000px", height = "250px")     
+           textAreaInput(inputId = "input_text_summary", label = "Input Text - Format them as sentences", width = "1000px", height = "250px"
+                         , value = "I had called upon my friend, Mr. Sherlock Holmes, one day in the autumn of last year and found him in deep conversation with a very stout, florid-faced, elderly gentleman with fiery red hair. With an apology for my intrusion, I was about to withdraw when Holmes pulled me abruptly into the room and closed the door behind me.")     
     )
   ),
+  
+  fluidRow(
+    column(4,
+           textOutput(outputId = "sentence_count")
+           )
+  ),
+  
+  br(),
   
   fluidRow(
     column(4,
@@ -209,6 +219,8 @@ text_summary_callback <- function(input, output, session) {
   })
   
   
+  
+  output$sentence_count <- renderText({ paste("Number of Sentences ", length(unlist(tokenize_sentences(input$input_text_summary))) ) })
   
   
   output$relevance_summary <- renderText({  relevance_summarised_text()  })
